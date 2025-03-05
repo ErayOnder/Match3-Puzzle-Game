@@ -28,7 +28,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         if (instance == null)
         {
             instance = this as T;
-            DontDestroyOnLoad(gameObject);
+            // IMPR: DontDestroyOnLoad is a Singleton responsibility, I guess.
         }
         else
         {

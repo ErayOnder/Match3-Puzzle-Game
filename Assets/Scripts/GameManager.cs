@@ -9,7 +9,7 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
-        // Add your GameManager initialization code here
+        DontDestroyOnLoad(gameObject);
     }
 
     public void ResetGame()
@@ -42,7 +42,7 @@ public class GameManager : Singleton<GameManager>
             yield return null;
         }
         yield return new WaitForSeconds(1f);
-        
+
         if (LoadingScreen != null)
         {
             LoadingScreen.SetActive(false);
